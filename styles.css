@@ -82,8 +82,13 @@ body {
 }
 
 .header__contact .btn-primary:hover {
-  background-color: #019874;
+  background-color: #546A4D;
 }
+
+.nav-toggle {
+  display: none; /* Esconde o checkbox */
+}
+
 
 /* Hero Section */
 .hero {
@@ -159,7 +164,7 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #019874;
+  background-color: #FDE5E1;
 }
 
 
@@ -183,10 +188,10 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 2px; /* espessura da borda "falsa" */
-  background: linear-gradient(to right, transparent, #ffffff);
+  background: linear-gradient(to right, transparent, #fde5e1b7);
   -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
+    linear-gradient(#ffffff9c 0 0) content-box, 
+    linear-gradient(#ffffff9c 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
   pointer-events: none;
@@ -289,21 +294,6 @@ body {
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .grid-two {
-    grid-template-columns: 1fr;
-  }
-
-  .grid-two .wide {
-    grid-column: span 1;
-    height: auto;
-  }
-
-  .grid-three {
-    grid-template-columns: 1fr;
-  }
-}
 
 
 
@@ -684,3 +674,476 @@ body {
   width: 100%;
   height: 30px;
 }
+
+
+
+/* Media query*/
+
+
+/* Inicio */
+/* ============================= */
+/* 1) Tablet (até 768px)         */
+/* ============================= */
+@media (max-width: 768px) {
+  .hero__content {
+    margin-top: 200px;
+    padding: 15px;
+  }
+  .hero__content h1 {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+  .hero__content p {
+    font-size: 18px;
+  }
+  .hero__buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .btn-primary,
+  .botao-glass {
+    width: auto;
+    padding: 10px 20px;
+  }
+
+  /* Sobre */
+  .about {
+    padding: 80px 0;
+  }
+  .about__content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .about__text h1 {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+  .about__text p {
+    font-size: 16px;
+  }
+  .btn-about {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .about__gallery {
+    gap: 20px;
+  }
+  /* Grid A passa para 2 colunas mais estreitas */
+  .grid-two {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid-two .wide {
+    height: 200px;
+  }
+  /* Grid B vira 2 colunas para dar mais destaque */
+  .grid-three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /* Diferenciais */
+  .differentials {
+    padding: 80px 0;
+  }
+
+  .differentials__text h1 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+  .differentials__text p {
+    font-size: 16px;
+  }
+
+  .differentials__cards-photos {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Cards empilhados e menores */
+  .cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .card {
+    padding: 20px;
+  }
+  .card h2 {
+    font-size: 20px;
+  }
+  .card p {
+    font-size: 14px;
+  }
+
+  /* Fotos lado a lado, ocupando 50% cada */
+  .differentials__photos {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .differentials__photos img {
+    width: calc(50% - 10px);
+  }
+
+  /* Especialidades */
+  .specialties h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+
+  .specialties p {
+    font-size: 16px;
+  }
+
+  /* testemunhos */
+  .testimonials__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 10px;
+  }
+  .testimonial-column {
+    flex: 1 1 calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /*Footer*/
+  .footer {
+    padding: 80px 0;
+  }
+  .footer__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding: 0 20px;
+  }
+  .footer__info h1 {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+  .footer__info p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .footer__actions {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .btn-primary-large {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  .footer__socials {
+    gap: 15px;
+  }
+  .footer__socials a {
+    width: 45px;
+    height: 45px;
+    padding: 8px;
+  }
+  .footer__socials img {
+    width: 20px;
+    height: 20px;
+  }
+  .footer__image {
+    order: -1; /* mostra a imagem acima do texto se preferir */
+  }
+  .footer__image img {
+    max-width: 80%;
+    height: auto;
+  }
+  .brown-line {
+    height: 25px;
+  }
+}
+
+
+
+
+
+
+/* ============================= */
+/* 2) Mobile (até 390px)         */
+/* ============================= */
+@media (max-width: 390px) {
+  /* 1) Ajustes gerais */
+  .nav-toggle {
+
+    display: none !important;
+  }
+  
+  .nav__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+  
+  .nav__toggle span,
+  .nav__toggle span::before,
+  .nav__toggle span::after {
+    content: "";
+    display: block;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #fff;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .nav__toggle span::before {
+    transform: translateY(-8px);
+  }
+  
+  .nav__toggle span::after {
+    transform: translateY(8px);
+  }
+
+
+
+  .header__content {
+    flex-direction: row; /* precisa continuar em linha para abrigar logo + toggle */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  /* 2) Exibe o toggle (checkbox + label) */
+  .nav-toggle {
+    display: block;
+  }
+  .nav__toggle {
+    display: flex;
+  }
+
+  /* 3) Esconde o nav original off-canvas */
+  .header__nav {
+    position: absolute;
+    top: 60px;    /* logo + toggle têm ~56px de altura */
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    width: 80%;   /* largura do menu lateral */
+    max-width: 220px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    border-radius: 8px 0 0 8px;
+    padding: 10px 0;
+    z-index: 50;
+  }
+  .header__nav ul {
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+  }
+  .header__nav li + li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .header__nav a {
+    padding: 12px 20px;
+    display: block;
+    color: #fff;
+  }
+
+  /* 4) Quando o checkbox for marcado, traz o nav para dentro da tela */
+  .nav-toggle:checked + .nav__toggle + .header__nav {
+    transform: translateX(0);
+  }
+
+  /* 5) Animação do ícone para ‘X’ */
+  .nav-toggle:checked + .nav__toggle span {
+    background: transparent;
+  }
+  .nav-toggle:checked + .nav__toggle span::before {
+    transform: rotate(45deg) translate(-4px, 0px);
+  }
+  .nav-toggle:checked + .nav__toggle span::after {
+    transform: rotate(-45deg) translate(2px, -6px);
+  }
+
+  /* 6) Esconde o botão primário fora do nav (opcional) */
+  .header__contact {
+    display: none;
+  }
+
+  /* 7) Hero permanece responsivo conforme seu código */
+  .hero__content {
+    margin-top: 100px;
+    padding: 10px;
+  }
+  .hero__content h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  .hero__content p {
+    font-size: 16px;
+  }
+  .hero__buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn-primary,
+  .botao-glass {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Sobre */
+  .about {
+    padding: 50px 0;
+  }
+  .about__content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .about__text h1 {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+  .about__text p {
+    font-size: 14px;
+  }
+  .btn-about {
+    width: 100%;
+    padding: 8px 16px;
+    text-align: center;
+  }
+  .about__gallery {
+    gap: 15px;
+  }
+  /* Cada imagem ocupa toda a largura */
+  .grid-two,
+  .grid-three {
+    grid-template-columns: 1fr;
+  }
+  .grid-two .wide {
+    height: 180px;
+  }
+
+  /* Diferenciais */
+  .differentials {
+    padding: 60px 0;
+  }
+
+  .differentials__text h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+  .differentials__text p {
+    font-size: 14px;
+  }
+
+  .differentials__cards-photos {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Cards totalmente empilhados */
+  .cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .card {
+    padding: 15px;
+  }
+  .card h2 {
+    font-size: 18px;
+  }
+  .card p {
+    font-size: 13px;
+  }
+
+  /* Fotos em coluna única */
+  .differentials__photos {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .differentials__photos img {
+    width: 100%;
+  }
+
+  /* testemunhos */
+
+  .testimonials__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+  .testimonial-column {
+    flex: 1 1 100%;
+    gap: 15px;
+  }
+  .testimonial-card {
+    padding: 15px;
+  }
+  .testimonial-header h3 {
+    font-size: 16px;
+  }
+  .testimonial-header span {
+    font-size: 12px;
+  }
+  .testimonial-body p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .testimonial-header img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Footer */
+  
+  .footer {
+    padding: 50px 0;
+  }
+  .footer__content {
+    gap: 30px;
+    padding: 0 15px;
+  }
+  .footer__info h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  .footer__info p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .footer__actions {
+    gap: 15px;
+  }
+  .btn-primary-large {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .footer__socials {
+    gap: 10px;
+  }
+  .footer__socials a {
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+  }
+  .footer__socials img {
+    width: 18px;
+    height: 18px;
+  }
+  .footer__image img {
+    max-width: 250%;
+  }
+  .brown-line {
+    height: 20px;
+  }
+
+
+}
+
+
+
+

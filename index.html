@@ -10,22 +10,38 @@
 <body>
 
   <!-- Header -->
-  <header class="header">
-    <div class="container header__content">
-      <nav class="header__nav">
-        <ul>
-          <img src="/assets/svg/CLIMES SVG 1.svg"  class="header__logo" alt="Logo da Clínica">
-          <li><a href="#sobre">Início</a></li>
-          <li><a href="#especialidades">Sobre nós</a></li>
-          <li><a href="#tratamentos">Especialidades</a></li>
-          <li><a href="#agendar">Diferenciais</a></li>
-        </ul>
-      </nav>
-      <div class="header__contact">
-        <a href="#contato" class="btn-primary">Fale com a gente no WhatsApp</a>
-      </div>
+  <!-- Header com Hamburger -->
+<header class="header">
+  <div class="container header__content">
+    <!-- Logo -->
+    <div class="header__logo">
+      <a href="#inicio">
+        <img src="/assets/svg/CLIMES SVG 1.svg" alt="Logo da Clínica" loading="lazy"/>
+      </a>
     </div>
-  </header>
+
+    <!-- Checkbox toggle -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle"/>
+    <label for="nav-toggle" class="nav__toggle" aria-label="Abrir menu">
+      <span></span>
+    </label>
+
+    <!-- Nav principal -->
+    <nav class="header__nav">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre nós</a></li>
+        <li><a href="#especialidades">Especialidades</a></li>
+        <li><a href="#diferenciais">Diferenciais</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botão WhatsApp -->
+    <div class="header__contact">
+      <a href="#contato" class="btn-primary">Fale com a gente no WhatsApp</a>
+    </div>
+  </div>
+</header>
 
   <!-- Big Hero -->
   <section  id="hero" class="hero">

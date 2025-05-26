@@ -33,8 +33,8 @@ const swiper = new Swiper('.specialties__swiper', {
     },
     // Desktop: 3 slides
     769: {
-      slidesPerView: 3,
-      spaceBetween: 30,
+      slidesPerView: 2,
+      spaceBetween: 0,
     },
   }
 });

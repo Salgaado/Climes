@@ -47,15 +47,17 @@ body {
 }
 
 .header__logo img {
-  height: 50px;
+  height: 80px;
 }
 
 .header__nav ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin-left: -55rem;
+    max-width: 600px;
 }
 
 .header__nav ul li a{

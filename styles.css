@@ -257,14 +257,13 @@ body {
 .about__gallery {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
   max-width: 900px;
 }
 
 .about__grid {
   display: grid;
   gap: 10px;
-  margin-bottom: 20px;
 }
 
 .grid-two {

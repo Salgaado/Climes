@@ -644,7 +644,7 @@ body {
 }
 
 .btn-primary-large:hover {
-  background-color: #5b4342;
+  background-color: #8B686C;
   color: white;
 }
 
@@ -667,13 +667,18 @@ body {
 }
 
 .footer__socials a:hover {
-  background-color: #5b4342;
+  background-color: #8B686C;
   border-color: #5b4342;
+  color: #fff;
 }
 
 .footer__socials img {
   width: 24px;
   height: 24px;
+}
+
+.footer__socials a:hover svg path{
+  fill: #fff;
 }
 
 .footer__image {

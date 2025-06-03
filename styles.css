@@ -281,27 +281,45 @@ body {
 
 /* ========== NOVO: gradient-border wrapper ========== */
 .gradient-border {
+  position: relative;
   display: block;
-  padding: 2px;                    
-  border-radius: 20px;             
-  background: transparent;         
-  overflow: hidden;                
-  transition: 
-    background 0.3s ease, 
-    transform 0.3s ease, 
-    box-shadow 0.3s ease;
+  padding: 2px;            
+  border-radius: 20px;
+  overflow: hidden;            
 }
 
 
-.gradient-border:hover {
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;                    
   background: linear-gradient(
     to top right,
     #B5A0A3,
     #5D4346
   );
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+  border-radius: 20px;         
+  opacity: 0;                  
+  transition: opacity 0.9s ease; 
+  z-index: 0;                  
 }
 
+
+.gradient-border > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+
+.gradient-border:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.9s ease;
+}
 
 .about__grid img {
   display: block;
@@ -375,7 +393,7 @@ body {
 
 .card {
   background-color: inherit;
-  padding: 30px;
+  padding: 30px 0px;
   border-radius: 10px;
 }
 

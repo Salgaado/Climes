@@ -56,7 +56,7 @@ body {
     justify-content: center;
     gap: 20px;
     list-style: none;
-    margin-left: -55rem;
+    margin-left: 0rem;
     max-width: 600px;
 }
 
@@ -701,15 +701,24 @@ body {
 
 /* Media query*/
 
+@media (min-width: 1800px) {
+  .header__nav ul {
+  margin-left: -55rem; 
+} 
+}
+
 
 /* Inicio */
 /* ============================= */
 /* 2) Notebooks (até 1280x800px) */
 /* ============================= */
+
+
+
 @media (max-width: 1280px) {
 /* header */
 .header__nav ul {
-  margin-left: -20rem; /* Ajusta o espaçamento para telas menores */
+  margin-left: 0rem; /* Ajusta o espaçamento para telas menores */
 }
 
 .hero__content{

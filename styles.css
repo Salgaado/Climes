@@ -419,10 +419,13 @@ body {
 }
 
 .differentials__photos img {
+  display: block;
   width: 100%;
-  border-radius: 10px;
+  height: 100%;
   object-fit: cover;
+  border-radius: 10px;  
 }
+
 
 
 /* Specialties Section */

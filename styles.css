@@ -900,7 +900,7 @@ font-size: 35px;
     padding: 15px;
   }
   .hero__content h1 {
-    font-size: 48px;
+    font-size: 44px;
     line-height: 1.1;
   }
   .hero__content p {
@@ -909,10 +909,11 @@ font-size: 35px;
   .hero__buttons {
     flex-direction: column;
     gap: 15px;
+    align-items: center;
   }
   .btn-primary,
   .botao-glass {
-    width: auto;
+    width: 80%;
     padding: 10px 20px;
   }
 
@@ -925,11 +926,21 @@ font-size: 35px;
     gap: 30px;
   }
   .about__text h1 {
-    font-size: 36px;
+    font-size: 28px;
     line-height: 1.1;
+    text-align: center;
   }
+
+  .about__text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .about__text p {
-    font-size: 16px;
+    font-size: 14px;
+    text-align: center;
   }
   .btn-about {
     padding: 10px 20px;
@@ -947,13 +958,17 @@ font-size: 35px;
   }
   /* Grid B vira 2 colunas para dar mais destaque */
   .grid-three {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
 
   /* Diferenciais */
   .differentials {
     padding: 80px 0;
+  }
+
+  .differentials__text{
+    text-align: center;
   }
 
   .differentials__text h1 {
@@ -986,11 +1001,11 @@ font-size: 35px;
 
   /* Fotos lado a lado, ocupando 50% cada */
   .differentials__photos {
-    flex-direction: row;
+    flex-direction: column;
     gap: 20px;
   }
   .differentials__photos img {
-    width: calc(50% - 10px);
+    width: 100%;
   }
 
   /* Especialidades */
@@ -1027,7 +1042,8 @@ font-size: 35px;
     align-items: center;
     text-align: center;
     gap: 40px;
-    padding: 0 20px;
+    padding: 0;
+    margin: 0;
   }
   .footer__info h1 {
     font-size: 48px;
@@ -1061,7 +1077,7 @@ font-size: 35px;
     order: -1; /* mostra a imagem acima do texto se preferir */
   }
   .footer__image img {
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
   }
   .brown-line {
@@ -1199,7 +1215,7 @@ font-size: 35px;
   }
   .btn-primary,
   .botao-glass {
-    width: 100%;
+    width: 80%;
     text-align: center;
   }
 
@@ -1314,7 +1330,7 @@ font-size: 35px;
   }
   .footer__content {
     gap: 30px;
-    padding: 0 15px;
+    padding: 0;
   }
   .footer__info h1 {
     font-size: 32px;
@@ -1328,7 +1344,7 @@ font-size: 35px;
     gap: 15px;
   }
   .btn-primary-large {
-    width: 100%;
+    width: 80%;
     padding: 10px 20px;
     font-size: 14px;
   }
@@ -1345,7 +1361,7 @@ font-size: 35px;
     height: 18px;
   }
   .footer__image img {
-    max-width: 250%;
+    max-width: 100%;
   }
   .brown-line {
     height: 20px;

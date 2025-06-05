@@ -606,7 +606,11 @@ body {
   border-radius: 10px;
 }
 
-
+.video-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* Footer */
 .footer {

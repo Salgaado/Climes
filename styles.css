@@ -832,15 +832,14 @@ font-size: 35px;
   }
 
 
-/* Seu header e toggle continuam iguais */
-.header__content {
-  flex-direction: row; /* precisa continuar em linha para abrigar logo + toggle */
+/* .header__content {
+  flex-direction: row; 
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
 
-/* 2) Exibe o toggle (checkbox + label) */
+
 .nav-toggle {
   display: block;
 }
@@ -848,15 +847,15 @@ font-size: 35px;
   display: flex;
 }
 
-/* 3) Off-canvas atualizado: empurra totalmente para fora com 100vw */
+
 .header__nav {
   position: absolute;
-  top: 60px;              /* logo + toggle têm ~56px de altura */
+  top: 60px;              
   right: 0;
   background: rgba(0, 0, 0, 0.9);
-  width: 80%;             /* largura do menu lateral */
+  width: 80%;            
   max-width: 220px;
-  transform: translateX(100vw); /* empurra para fora da viewport inteira */
+  transform: translateX(100vw); 
   transition: transform 0.3s ease;
   border-radius: 8px 0 0 8px;
   padding: 10px 0;
@@ -878,12 +877,11 @@ font-size: 35px;
   color: #fff;
 }
 
-/* 4) Ao marcar o checkbox, traz o nav para dentro da viewport */
+
 .nav-toggle:checked + .nav__toggle + .header__nav {
   transform: translateX(0);
 }
 
-/* 5) Animação do ícone para ‘X’ */
 .nav-toggle:checked + .nav__toggle span {
   background: transparent;
 }
@@ -894,7 +892,95 @@ font-size: 35px;
   transform: rotate(-45deg) translate(2px, -6px);
 }
 
-/* 6) Esconde o botão primário fora do nav (opcional) */
+.header__contact {
+  display: none;
+} */
+
+
+
+/* Seu header e toggle continuam iguais */
+.header__content {
+  display: flex;
+  flex-direction: row; /* precisa continuar em linha para abrigar logo + toggle */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+/* 2) Exibe o toggle (checkbox + label) */
+.nav-toggle {
+  display: block;
+}
+.nav__toggle {
+  display: flex;
+}
+
+/* 3) Off-canvas escondido por padrão com display: none */
+.header__nav {
+  display: none;              /* esconde completamente, sem ocupar espaço */
+  position: fixed;            /* retira do fluxo para que, ao exibir, não empurre nada */
+  top: 60px;                  /* logo + toggle têm ~56px de altura */
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  width: 80%;                 /* largura do menu lateral */
+  max-width: 220px;
+  border-radius: 8px 0 0 8px;
+  padding: 10px 0;
+  z-index: 50;
+}
+.header__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+.header__nav li + li {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.header__nav a {
+  padding: 12px 20px;
+  display: block;
+  color: #fff;
+}
+
+/* 4) Quando o toggle for acionado, remove o display: none e exibe o menu */
+.nav-toggle:checked + .nav__toggle + .header__nav {
+  display: block;
+}
+
+.header__nav {
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  width: 80%;
+  max-width: 220px;
+  transform: translateX(100%);    /* empurra totalmente para fora */
+  transition: transform 0.3s ease;
+  border-radius: 8px 0 0 8px;
+  padding: 10px 0;
+  z-index: 50;
+}
+.nav-toggle:checked + .nav__toggle + .header__nav {
+  display: block;
+  transform: translateX(0);        /* traz para dentro da viewport */
+}
+*/
+
+/* 6) Animação do ícone para ‘X’ permanece a mesma */
+.nav-toggle:checked + .nav__toggle span {
+  background: transparent;
+}
+.nav-toggle:checked + .nav__toggle span::before {
+  transform: rotate(45deg) translate(-4px, 0px);
+}
+.nav-toggle:checked + .nav__toggle span::after {
+  transform: rotate(-45deg) translate(2px, -6px);
+}
+
+/* 7) Esconde o botão primário fora do nav (opcional) */
 .header__contact {
   display: none;
 }
@@ -906,6 +992,7 @@ font-size: 35px;
     margin-top: 200px;
     padding: 15px;
   }
+
   .hero__content h1 {
     font-size: 44px;
     line-height: 1.1;

@@ -986,7 +986,11 @@ font-size: 35px;
 
   /* Cards empilhados e menores */
   .cards {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     gap: 20px;
   }
   .card {
@@ -1036,15 +1040,21 @@ font-size: 35px;
   /*Footer*/
   .footer {
     padding: 80px 0;
+    padding-bottom: 0px; /* espaço para a linha marrom */
   }
   .footer__content {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     text-align: center;
     gap: 40px;
     padding: 0;
     margin: 0;
   }
+
+  .footer__info{
+    flex: 1 1 320px
+  }
+
   .footer__info h1 {
     font-size: 48px;
     line-height: 1.1;
@@ -1327,6 +1337,7 @@ font-size: 35px;
   
   .footer {
     padding: 50px 0;
+    padding-bottom: 0px; /* espaço para a linha marrom */
   }
   .footer__content {
     gap: 30px;

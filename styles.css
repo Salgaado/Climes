@@ -15,6 +15,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
@@ -827,71 +832,73 @@ font-size: 35px;
   }
 
 
+/* Seu header e toggle continuam iguais */
+.header__content {
+  flex-direction: row; /* precisa continuar em linha para abrigar logo + toggle */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
 
-  .header__content {
-    flex-direction: row; /* precisa continuar em linha para abrigar logo + toggle */
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
+/* 2) Exibe o toggle (checkbox + label) */
+.nav-toggle {
+  display: block;
+}
+.nav__toggle {
+  display: flex;
+}
 
-  /* 2) Exibe o toggle (checkbox + label) */
-  .nav-toggle {
-    display: block;
-  }
-  .nav__toggle {
-    display: flex;
-  }
+/* 3) Off-canvas atualizado: empurra totalmente para fora com 100vw */
+.header__nav {
+  position: absolute;
+  top: 60px;              /* logo + toggle têm ~56px de altura */
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  width: 80%;             /* largura do menu lateral */
+  max-width: 220px;
+  transform: translateX(100vw); /* empurra para fora da viewport inteira */
+  transition: transform 0.3s ease;
+  border-radius: 8px 0 0 8px;
+  padding: 10px 0;
+  z-index: 50;
+}
+.header__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+.header__nav li + li {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.header__nav a {
+  padding: 12px 20px;
+  display: block;
+  color: #fff;
+}
 
-  /* 3) Esconde o nav original off-canvas */
-  .header__nav {
-    position: absolute;
-    top: 60px;    /* logo + toggle têm ~56px de altura */
-    right: 0;
-    background: rgba(0, 0, 0, 0.9);
-    width: 80%;   /* largura do menu lateral */
-    max-width: 220px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    border-radius: 8px 0 0 8px;
-    padding: 10px 0;
-    z-index: 50;
-  }
-  .header__nav ul {
-    flex-direction: column;
-    gap: 8px;
-    margin: 0;
-    padding: 0;
-  }
-  .header__nav li + li {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  .header__nav a {
-    padding: 12px 20px;
-    display: block;
-    color: #fff;
-  }
+/* 4) Ao marcar o checkbox, traz o nav para dentro da viewport */
+.nav-toggle:checked + .nav__toggle + .header__nav {
+  transform: translateX(0);
+}
 
-  /* 4) Quando o checkbox for marcado, traz o nav para dentro da tela */
-  .nav-toggle:checked + .nav__toggle + .header__nav {
-    transform: translateX(0);
-  }
+/* 5) Animação do ícone para ‘X’ */
+.nav-toggle:checked + .nav__toggle span {
+  background: transparent;
+}
+.nav-toggle:checked + .nav__toggle span::before {
+  transform: rotate(45deg) translate(-4px, 0px);
+}
+.nav-toggle:checked + .nav__toggle span::after {
+  transform: rotate(-45deg) translate(2px, -6px);
+}
 
-  /* 5) Animação do ícone para ‘X’ */
-  .nav-toggle:checked + .nav__toggle span {
-    background: transparent;
-  }
-  .nav-toggle:checked + .nav__toggle span::before {
-    transform: rotate(45deg) translate(-4px, 0px);
-  }
-  .nav-toggle:checked + .nav__toggle span::after {
-    transform: rotate(-45deg) translate(2px, -6px);
-  }
+/* 6) Esconde o botão primário fora do nav (opcional) */
+.header__contact {
+  display: none;
+}
 
-  /* 6) Esconde o botão primário fora do nav (opcional) */
-  .header__contact {
-    display: none;
-  }
 
 
 
@@ -1087,7 +1094,7 @@ font-size: 35px;
     order: -1; /* mostra a imagem acima do texto se preferir */
   }
   .footer__image img {
-    max-width: 100%;
+    max-width: 120%;
     height: auto;
   }
   .brown-line {

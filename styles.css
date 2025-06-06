@@ -926,7 +926,7 @@ font-size: 35px;
     gap: 30px;
   }
   .about__text h1 {
-    font-size: 28px;
+    font-size: 38px;
     line-height: 1.1;
     text-align: center;
   }
@@ -939,7 +939,7 @@ font-size: 35px;
   }
 
   .about__text p {
-    font-size: 14px;
+    font-size: 18px;
     text-align: center;
   }
   .btn-about {

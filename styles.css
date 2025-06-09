@@ -336,6 +336,18 @@ body {
   transition: box-shadow 0.9s ease;
 }
 
+
+
+
+
+.gradient-border-mobile:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.9s ease;
+}
+
+
+
+
 .about__grid img {
   display: block;
   width: 100%;
@@ -478,8 +490,8 @@ body {
 .specialties__row h2{
   border-radius: 20px;
   font-family:  'Poppins';
-  font-size: 20px;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 200;
   border: 1px solid #B5A0A3;
   background-color: #5D4346;  
   color: #fff;
@@ -495,7 +507,7 @@ body {
 .specialties__row h2:hover{
   cursor: pointer;
   background-color: #B5A0A3;
-  color: #5D4346;
+  color: #fff;
   font-weight: 300;
 }
 
@@ -505,7 +517,7 @@ body {
 .specialties h1{
   font-size: 52px;
   margin-bottom: 32px;
-  color: #5b4342;
+  color: #5D4342;
   font-family: 'NewYork';
   font-weight: 400;
   line-height: 1;
@@ -781,6 +793,10 @@ font-size: 35px;
 .differentials__photos img {
     width: 50%;
 }
+
+.gradient-border-mobile {
+  display: none;
+}
 }
 /* ============================= */
 /* 2) Tablet (até 768px)         */
@@ -1008,6 +1024,16 @@ font-size: 35px;
     gap: 30px;
   }
 
+  .gradient-border{
+    display: none;
+  }
+
+
+  .gradient-border-mobile{
+    display: flex;
+  }
+
+
   /* Cards empilhados e menores */
   .cards {
     display: flex;
@@ -1024,7 +1050,7 @@ font-size: 35px;
     font-size: 20px;
   }
   .card p {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   /* Fotos lado a lado, ocupando 50% cada */
@@ -1103,8 +1129,8 @@ font-size: 35px;
     line-height: 1.1;
   }
   .footer__info p {
-    font-size: 16px;
-    margin-bottom: 30px;
+    font-size: 14px;
+    margin: 10px 50px;
   }
   .footer__actions {
     flex-direction: column;

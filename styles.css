@@ -214,10 +214,14 @@ body {
   padding: 100px 0;
   background-image: url("assets/Backgrounds/SOBRE\ A\ CLIMES.png");
   background-size: cover;
+  display: flex;
+  justify-content: center;
 }
 
 
-
+.container.about__content {
+  max-width: 1400px;
+}
 
 .about__content {
   display: flex;
@@ -248,7 +252,7 @@ body {
 }
 
 .btn-about{
-  padding: 12px 25px;
+  padding: 10px 20px;
   border-radius: 35px;
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
@@ -260,7 +264,7 @@ body {
   position: relative;
   display: inline-block;   /* ajusta ao tamanho do botão */
   padding: 1px;            /* espessura da borda degradê */
-  border-radius: 20px;     /* raio externo */
+  border-radius: 30px;     /* raio externo */
   overflow: hidden;
 }
 
@@ -286,11 +290,12 @@ body {
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: 18px;     /* 20px (wrapper) - 2px (padding) */
-  padding: 0.75em 1.5em;    /* ajuste ao seu gosto */
+  border-radius: 30px;     /* 20px (wrapper) - 2px (padding) */
+  padding: 10px 16px;    /* ajuste ao seu gosto */
   background-color: #5D4346;
   color: #FFF;
   transition: background-color 0.3s ease;
+  font-size: 18px;
 }
 
 .gradient-btn .btn-about:hover {
@@ -374,9 +379,6 @@ body {
   transition: box-shadow 0.9s ease;
 }
 
-
-
-
 .about__grid img {
   display: block;
   width: 100%;
@@ -394,8 +396,13 @@ body {
   padding: 100px 0;
   background-image: url("assets/Backgrounds/DIFERENCIAIS.png");
   background-size: cover;
+  display: flex;
+  justify-content: center;
 }
 
+.container.differentials__content{
+  max-width: 1280px;
+}
 .differentials__content {
   display: flex;
   flex-direction: column;
@@ -544,13 +551,12 @@ body {
 .gradient-h2 h2 {
   margin: 0;
   font-family: 'Poppins';
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 200;
   background-color: #5D4346;
   color: #fff;
   width: 250px;
   text-align: center;
-  padding: 7px;
   border: none;             /* removendo a borda sólida original */
   border-radius: 18px;      /* 20px - 2px de padding */
   position: relative;
@@ -561,8 +567,6 @@ body {
 .gradient-h2 h2:hover {
   cursor: pointer;
   background-color: #B5A0A3;
-  font-weight: 300;
-  /* a cor do texto permanece branca */
 }
 
 
@@ -635,12 +639,12 @@ body {
 .testimonial-header h3 {
   font-size: 18px;
   margin: 0;
-  color: #5b4342;
+  color: #6B4045;
 }
 
 .testimonial-header span {
   font-size: 14px;
-  color: #999;
+  color: #6B4045;
 }
 
 .testimonial-body img {
@@ -651,16 +655,28 @@ body {
 
 .testimonial-body p {
   font-size: 16px;
-  color: #555;
+  color: #c38d93bd;
   line-height: 1.6;
+}
+
+.card-bottom> .testimonial-body p {
+  color:#0a1053ab
 }
 
 .card-top{
   border: 1px solid #C38D9399;
 }
 
-.card-bottom{
+.card-bottom {
   border: 1px solid #0A105399;
+}
+
+.card-bottom>.testimonial-header  span {
+  color: #0A1053;
+}
+
+.card-bottom>.testimonial-header  h3 {
+  color: #0A1053;
 }
 
 .youtube-video{
@@ -850,11 +866,16 @@ font-size: 35px;
 }
 
 .differentials__photos img {
-    width: 50%;
+    width: 100%;
 }
 
 .gradient-border-mobile {
   display: none;
+}
+
+
+.footer__info {
+  margin-left: 0px;
 }
 }
 /* ============================= */
@@ -1075,6 +1096,9 @@ font-size: 35px;
     grid-template-columns: repeat(3, 1fr);
   }
 
+.gradient-h2{
+  margin: -15px;
+}
 
   /* Diferenciais */
   .differentials {

@@ -137,6 +137,7 @@ body {
   font-family: 'NewYork';
   font-weight: 400;
   line-height: 1;
+
 }
 
 .hero__content p {
@@ -248,22 +249,52 @@ body {
 
 .btn-about{
   padding: 12px 25px;
-  border-radius: 30px;
+  border-radius: 35px;
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
   font-family: 'Poppins';
   font-weight: 200;
 }
 
-.btn-about {
-  background-color: #5D4346;
-  color: #FFF;
+.gradient-btn {
+  position: relative;
+  display: inline-block;   /* ajusta ao tamanho do botão */
+  padding: 1px;            /* espessura da borda degradê */
+  border-radius: 20px;     /* raio externo */
+  overflow: hidden;
 }
 
-.btn-about:hover{
-  cursor: pointer;
-  background-color: #B5A0A3;
+.gradient-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #B5A0A3, #5D4346);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.gradient-btn:hover::before {
+  opacity: 1;
+}
+
+/* 2) seu botão, agora dentro do wrapper */
+.gradient-btn .btn-about {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 18px;     /* 20px (wrapper) - 2px (padding) */
+  padding: 0.75em 1.5em;    /* ajuste ao seu gosto */
+  background-color: #5D4346;
   color: #FFF;
+  transition: background-color 0.3s ease;
+}
+
+.gradient-btn .btn-about:hover {
+  background-color: #B5A0A3;
   font-weight: 300;
 }
 
@@ -330,6 +361,15 @@ body {
 
 
 .gradient-border:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.9s ease;
+}
+
+
+
+
+
+.gradient-border-mobile:hover {
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.9s ease;
 }
@@ -476,28 +516,53 @@ body {
   justify-content: center;
 }
 
-.specialties__row h2{
-  border-radius: 20px;
-  font-family:  'Poppins';
+/* 1) wrapper que desenha a borda degradê */
+.gradient-h2 {
+  position: relative;
+  display: inline-block;    /* ajusta ao tamanho do conteúdo */
+  padding: 1px;             /* espessura da “borda” */
+  border-radius: 20px;      /* mesmo raio do h2 original */
+  overflow: hidden;
+  margin-top: -20px;        /* mantém o overlap com a imagem */
+}
+
+.gradient-h2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #B5A0A3, #5D4346);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.gradient-h2:hover::before {
+  opacity: 1;
+}
+
+/* 2) estilos do <h2> dentro do wrapper */
+.gradient-h2 h2 {
+  margin: 0;
+  font-family: 'Poppins';
   font-size: 15px;
   font-weight: 200;
-  border: 1px solid #B5A0A3;
-  background-color: #5D4346;  
+  background-color: #5D4346;
   color: #fff;
   width: 250px;
   text-align: center;
-  padding: 5px;
-  margin-top: -20px;
+  padding: 7px;
+  border: none;             /* removendo a borda sólida original */
+  border-radius: 18px;      /* 20px - 2px de padding */
+  position: relative;
   z-index: 1;
-  transition: 0.3s  ease;
+  transition: background-color 0.3s ease;
 }
 
-
-.specialties__row h2:hover{
+.gradient-h2 h2:hover {
   cursor: pointer;
   background-color: #B5A0A3;
-  color: #fff;
   font-weight: 300;
+  /* a cor do texto permanece branca */
 }
 
 
@@ -796,6 +861,12 @@ font-size: 35px;
 /* 2) Tablet (até 768px)         */
 /* ============================= */
 @media (max-width: 768px) {
+
+    br{
+      display: none;
+    }
+
+
     .nav-toggle {
 
     display: none !important;
@@ -832,6 +903,10 @@ font-size: 35px;
   }
 
 
+    .nav-toggle:checked + .nav__toggle span {
+        background: transparent;
+    }
+
 /* Seu header e toggle continuam iguais */
 .header__content {
   display: flex;
@@ -840,6 +915,11 @@ font-size: 35px;
   align-items: center;
   padding: 10px;
 }
+
+.container.header__content {
+  margin: 0px 20px;
+}
+
 
 /* 2) Exibe o toggle (checkbox + label) */
 .nav-toggle {
@@ -1115,7 +1195,8 @@ font-size: 35px;
   }
 
   .footer__info{
-    flex: 1 1 320px
+    flex: 1 1 320px;
+    margin-left: 0px;
   }
 
   .footer__info h1 {

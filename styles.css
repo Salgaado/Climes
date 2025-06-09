@@ -451,7 +451,7 @@ body {
   background-image: url("assets/Backgrounds/ESPECIALIDADES.png");
   background-size: cover;
   text-align: center;
-  height: 80vh;
+  height: 75vh;
 }
 
 .specialties__rows{
@@ -623,7 +623,10 @@ body {
 }
 
 .footer__info {
-  flex: 1 1 500px;
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 250px;;
 }
 
 .footer__info h1 {

@@ -589,7 +589,13 @@ body {
 }
 
 
+.specialties-gradient{
+  margin-top: -20px;
+}
 
+.specialties-btn{
+  padding: 5px 10px !important;
+}
 
 /* Testimonials Section */
 .testimonials {

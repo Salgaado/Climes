@@ -453,7 +453,7 @@ body {
 .cards{
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 40px;
   align-items: center;
   justify-content: start;
 }
